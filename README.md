@@ -1,1 +1,1 @@
-goWisdom (v0.0.1 lite version) is an Android quotes app that gives users a unique experience of discovering new quotes and inspirational text
+App Starter is a pre-initalized android project that helps ZuluCoding team to start working directly on the main code instead of wondering around to fill the basic needs to start any android project. 
