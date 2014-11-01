@@ -52,19 +52,13 @@ public class SplashScreen extends Activity {
                 if(isConnected == false){
 
                     //===>
-                    //Log.d("Internet", "no connection");
-                   
+                    Log.d("Internet", "no connection");
                 }
                 else {
-                    /*Intent i = new Intent(SplashScreen.this, MyActivity.class);
-                    startActivity(i);
-                    finish();*/
-                }
-                    // Skipping the condition / No need to check the internet connection
                     Intent i = new Intent(SplashScreen.this, MyActivity.class);
                     startActivity(i);
                     finish();
-                
+                }
             }
         }, SPLASH_TIME_OUT);
 
