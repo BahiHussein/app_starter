@@ -53,15 +53,17 @@ public class SplashScreen extends Activity {
 
                     //===>
                     //Log.d("Internet", "no connection");
-                    Intent i = new Intent(SplashScreen.this, MyActivity.class);
-                    startActivity(i);
-                    finish();
+                   
                 }
                 else {
                     Intent i = new Intent(SplashScreen.this, MyActivity.class);
                     startActivity(i);
                     finish();
                 }
+                 Intent i = new Intent(SplashScreen.this, MyActivity.class);
+                    startActivity(i);
+                    finish();
+                
             }
         }, SPLASH_TIME_OUT);
 
