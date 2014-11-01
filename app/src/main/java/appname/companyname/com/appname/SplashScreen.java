@@ -56,11 +56,12 @@ public class SplashScreen extends Activity {
                    
                 }
                 else {
-                    Intent i = new Intent(SplashScreen.this, MyActivity.class);
+                    /*Intent i = new Intent(SplashScreen.this, MyActivity.class);
                     startActivity(i);
-                    finish();
+                    finish();*/
                 }
-                 Intent i = new Intent(SplashScreen.this, MyActivity.class);
+                    // Skipping the condition / No need to check the internet connection
+                    Intent i = new Intent(SplashScreen.this, MyActivity.class);
                     startActivity(i);
                     finish();
                 
