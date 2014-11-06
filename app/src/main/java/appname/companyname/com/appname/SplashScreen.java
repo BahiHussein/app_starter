@@ -1,15 +1,14 @@
 package appname.companyname.com.appname;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.os.Handler;
-import android.content.Intent;
-import android.util.Log;
 
 
 public class SplashScreen extends Activity {
@@ -18,7 +17,9 @@ public class SplashScreen extends Activity {
     Functions mFunctions;
     public Boolean isConnected = false;
     private static int SPLASH_TIME_OUT = 4000;
+    private static boolean offline_app = AppContent.offline_app;
     public int user_reg = 0;
+    private String tag = "AppState";
     private ImageView ic_logo;
     private Animation fade_in;
 
@@ -49,12 +50,18 @@ public class SplashScreen extends Activity {
             {
                 // Check Internet, User and Form State
                 isConnected = mConnectionDetector.isConnectingToInternet();
-                if(isConnected == false){
+                if(offline_app){
 
-                    //===>
-                    Log.d("Internet", "no connection");
-                }
-                else {
+                    //Offline mode active
+                } else if (!isConnected){
+
+                    //Online mode active and connection is not available (No Connection) --> referring to ErrorActivity
+                    Intent i = new Intent(SplashScreen.this, Error.class);
+                    startActivity(i);
+                    finish();
+                } else {
+
+                    //Online mode active and connection is available --> referring to MyActivity
                     Intent i = new Intent(SplashScreen.this, MyActivity.class);
                     startActivity(i);
                     finish();
